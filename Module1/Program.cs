@@ -21,8 +21,7 @@ using System.Numerics;
 У вихідний файл OUTPUT.TXT виведіть відповідь на завдання.
  */
 
-
-namespace Lab1
+namespace Module1
 {
     public class Program
     {
@@ -31,8 +30,8 @@ namespace Lab1
             try
             {
                 Console.OutputEncoding = Encoding.UTF8;
-                string inputFilePath = args.Length > 0 ? args[0] : "INPUT.TXT";
-                string outputFilePath = "OUTPUT.TXT";
+                string inputFilePath = args.Length > 0 ? args[0] : Path.Combine("Module1", "INPUT.TXT");
+                string outputFilePath = Path.Combine("Module1", "OUTPUT.TXT");
 
                 string[] input = File.ReadAllLines(inputFilePath);
                 var (N, A, B) = ValidateInput(input);
